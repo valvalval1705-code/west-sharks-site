@@ -1,0 +1,86 @@
+@property --transparency {
+  syntax: "<percentage>";
+  inherits: false;
+  initial-value: 100%;
+}
+
+.robot_list {
+  display: flex;
+  flex-direction: row;
+
+  width: 100%;
+  height: calc(98vh - 120px);
+  padding: 60px 0px 60px calc((100vw - 50vw) / 2);
+
+  & .robot_card {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 50vw;
+
+    box-shadow: 0 0 10px white;
+    border-radius: 10px;
+
+    background-color: rgb(54, 77, 112);
+
+    & .model_holder {
+      display: flex;
+      flex-grow: 2;
+      /* border: 4px solid red; */
+
+      & model-viewer {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    & .robot_info {
+      display: flex;
+      flex-grow: 1;
+      flex-direction: column;
+
+      & .robot_name {
+        text-align: center;
+        padding: 10px;
+        font-size: 1.7rem;
+        font-family:
+          "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+        color: white;
+      }
+
+      & .robot_description {
+        text-align: justify;
+        padding: 0 30px;
+        color: white;
+      }
+    }
+  }
+}
+
+@keyframes blink {
+  from {
+    --transparency: 0%;
+  }
+  8% {
+    --transparency: 40%;
+  }
+  16% {
+    --transparency: 10%;
+  }
+  30% {
+    --transparency: 50%;
+  }
+  45% {
+    --transparency: 20%;
+  }
+  65% {
+    --transparency: 70%;
+  }
+  85% {
+    --transparency: 60%;
+  }
+  100% {
+    --transparency: 100%;
+  }
+}
