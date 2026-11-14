@@ -1,0 +1,35 @@
+.cards-valores {
+    width: 100%;
+    max-width: 850px;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.cards-valores .card {
+    width: 100%;
+    min-height: 230px;
+    padding: 35px 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.cards-valores .card h3 {
+    font-size: 22px;
+    margin-bottom: 18px;
+}
+
+.cards-valores .card p {
+    font-size: 16px;
+}
+
+@media (max-width: 650px) {
+    .cards-valores {
+        grid-template-columns: 1fr;
+        max-width: 420px;
+    }
+}

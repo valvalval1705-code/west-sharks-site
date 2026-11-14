@@ -1,0 +1,57 @@
+.impacto {
+    padding: 100px 7%;
+    text-align: center;
+}
+
+.cards-impacto {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin: 45px 0;
+}
+
+.card-impacto {
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: #102c49;
+}
+
+.card-impacto img {
+    width: 100%;
+    height: 270px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.card-impacto:hover img {
+    transform: scale(1.06);
+}
+
+.conquistas {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.conquistas .conteudo {
+    max-width: 850px;
+}
+
+.conquistas p {
+    color: #40566a;
+}
+
+@media (max-width: 650px) {
+    .impacto,
+    .conquistas {
+        padding: 70px 7%;
+    }
+
+    .cards-impacto {
+        grid-template-columns: 1fr;
+    }
+
+    .card-impacto img {
+        height: auto;
+        max-height: 350px;
+    }
+}
