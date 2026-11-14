@@ -1,0 +1,56 @@
+[
+    {
+        "nome": "Augusto",
+        "funcao": "Competidor - Programador",
+        "descricao": "Integrante da equipe",
+        "imagem": "../assets/img/team/Augusto.jpg"
+    },
+    {
+        "nome": "Eduardo",
+        "funcao": "Competidor - Engenheiro",
+        "descricao": "Integrante da equipe",
+        "imagem": "../assets/img/team/Eduardo.jpg"
+    },
+    {
+        "nome": "Guilherme",
+        "funcao": "Competidor - Programador",
+        "descricao": "Integrante da equipe",
+        "imagem": "../assets/img/team/Guilherme.jpg"
+    },
+    {
+        "nome": "João",
+        "funcao": "Competidor - Engenheiro",
+        "descricao": "Integrante da equipe",
+        "imagem": "../assets/img/team/João.jpg"
+    },
+    {
+        "nome": "Lucas",
+        "funcao": "Competidor - Cadista",
+        "descricao": "Integrante da equipe",
+        "imagem": "../assets/img/team/Lucas.png"
+    },
+    {
+        "nome": "Valentina",
+        "funcao": "Competidor - Marketing",
+        "descricao": "Integrante da equipe",
+        "imagem": "../assets/img/team/Valentina.jpg"
+    },
+    {
+        "nome": "Angelo",
+        "funcao": "Técnico",
+        "descricao": "Técnico",
+        "imagem": "../assets/img/team/Angelo.jpg"
+    },
+    {
+        "nome": "Henry",
+        "funcao": "Mentor",
+        "descricao": "Mentor",
+        "imagem": "../assets/img/team/Henry.jpg"
+    },
+    {
+        "nome": "Daisy",
+        "funcao": "Técnica",
+        "descricao": "Técnica",
+        "imagem": "../assets/img/team/Daisy.jpg"
+    }
+]
