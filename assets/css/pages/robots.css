@@ -4,55 +4,103 @@
   initial-value: 100%;
 }
 
+@keyframes highlight-center {
+  0%,
+  35% {
+    border-width: 3px;
+    border-color: rgba(119, 151, 255, 0.3);
+    transform: scale(0.95);
+  }
+  50% {
+    border-width: 10px;
+    border-color: rgb(119, 151, 255);
+    transform: scale(1);
+  }
+  65%,
+  100% {
+    border-width: 3px;
+    border-color: rgba(119, 151, 255, 0.3);
+    transform: scale(0.95);
+  }
+}
+
 .robot_list {
+  --card-size: min(70vh, 80vw);
+
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
+  overflow-x: auto;
 
   width: 100%;
   height: calc(98vh - 120px);
-  padding: 60px 0px 60px calc((100vw - 50vw) / 2);
+  padding: 60px calc((100vw - var(--card-size)) / 2);
+
+  gap: 3rem;
+
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
 
   & .robot_card {
     display: flex;
     flex-direction: column;
 
-    height: 100%;
-    width: 50vw;
+    aspect-ratio: 1;
+    flex-shrink: 0;
+    height: var(--card-size);
+    width: auto;
 
-    box-shadow: 0 0 10px white;
-    border-radius: 10px;
+    background-color: var(--azul-escuro);
 
-    background-color: rgb(54, 77, 112);
+    scroll-snap-align: center;
 
-    & .model_holder {
+    view-timeline-name: --card-scroll;
+    view-timeline-axis: inline;
+
+    & .content_holder {
       display: flex;
-      flex-grow: 2;
-      /* border: 4px solid red; */
-
-      & model-viewer {
-        width: 100%;
-        height: 100%;
-      }
-    }
-
-    & .robot_info {
-      display: flex;
-      flex-grow: 1;
       flex-direction: column;
 
-      & .robot_name {
-        text-align: center;
-        padding: 10px;
-        font-size: 1.7rem;
-        font-family:
-          "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-        color: white;
+      height: 100%;
+      width: 100%;
+
+      box-sizing: border-box;
+      border: 3px solid rgb(119, 151, 255);
+      border-radius: 15px;
+
+      animation: highlight-center linear both;
+      animation-timeline: view(inline);
+      animation-range: cover 0% cover 100%;
+
+      & .model_holder {
+        display: flex;
+        flex-grow: 2;
+
+        & model-viewer {
+          width: 100%;
+          height: 100%;
+        }
       }
 
-      & .robot_description {
-        text-align: justify;
-        padding: 0 30px;
-        color: white;
+      & .robot_info {
+        display: flex;
+        flex-grow: 1;
+        flex-direction: column;
+
+        & .robot_name {
+          text-align: center;
+          padding: 10px;
+          font-size: 1.7rem;
+          font-family:
+            "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+          color: white;
+        }
+
+        & .robot_description {
+          text-align: justify;
+          padding: 0 30px;
+          color: white;
+        }
       }
     }
   }
