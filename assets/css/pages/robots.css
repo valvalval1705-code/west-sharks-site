@@ -64,7 +64,9 @@
       height: 100%;
       width: 100%;
 
-      box-sizing: content-box;
+      padding: 20px;
+
+      box-sizing: border-box;
       border: 3px solid rgb(119, 151, 255);
       border-radius: 15px;
 
@@ -75,6 +77,10 @@
       & .model_holder {
         display: flex;
         flex-grow: 2;
+        border-radius: 10px;
+        overflow: hidden;
+
+        margin-bottom: 10px;
 
         & model-viewer {
           width: 100%;
@@ -84,12 +90,11 @@
 
       & .robot_info {
         display: flex;
-        flex-grow: 1;
         flex-direction: column;
 
         & .robot_name {
           text-align: center;
-          padding: 10px;
+          padding: 5px;
           font-size: 1.7rem;
           font-family:
             "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
@@ -98,7 +103,7 @@
 
         & .robot_description {
           text-align: justify;
-          padding: 0 30px;
+          padding: 0 10px;
           color: white;
         }
       }
