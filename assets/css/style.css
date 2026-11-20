@@ -65,14 +65,15 @@ a {
 }
 
 .menu {
+  box-sizing: border-box;
   max-width: 1400px;
-  min-height: 85px;
+  /* min-height: 85px; */
   margin: auto;
   padding: 12px 5%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 25px;
+  gap: 5px;
 }
 
 .marca {
@@ -115,7 +116,8 @@ a {
 ===================================== */
 
 .capa {
-  min-height: 650px;
+  min-height: calc(100vh - 85px);
+  box-sizing: border-box;
   position: relative;
   display: flex;
   align-items: center;
@@ -302,12 +304,22 @@ section p {
   border-radius: 12px;
   padding: 30px 18px;
   transition: 0.3s;
+
+  & .icone svg {
+    transition: filter 300ms ease-in;
+    transition: color 300ms ease-in;
+  }
 }
 
 .card:hover {
   transform: translateY(-8px);
   border-color: var(--azul-claro);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+
+  & .icone svg {
+    color: white;
+    filter: drop-shadow( 0 0 10px var(--azul));
+  }
 }
 
 .icone {
@@ -586,18 +598,6 @@ body {
   width: 100%;
   max-width: 100%;
   overflow-x: hidden;
-}
-
-.menu {
-  width: 100%;
-  max-width: 1400px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  padding: 15px 20px;
-  gap: 15px;
 }
 
 .marca {

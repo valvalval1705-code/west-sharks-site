@@ -10,25 +10,21 @@ try {
 
   if (navLinks.length != 0) {
     navLinks.forEach((link) => {
-      console.log("Hello WORLD!!!!!!!!!!");
       link.addEventListener("mouseenter", () => {
         hoverSound2.currentTime = 0;
         hoverSound2.play().catch(() => {});
-        console.log("I'm still alive");
       });
     });
   }
 
   if (robotCards.length != 0) {
     robotCards.forEach((card) => {
-      console.log("Hello WORLD!!!!!!!!!!");
       card.addEventListener("mouseenter", () => {
         hoverSound.currentTime = 0;
         hoverSound.play().catch(() => {});
-        console.log("I'm still alive");
       });
     });
   }
 } catch (e) {
-  console.log(e);
+  console.log(e)
 }

@@ -24,17 +24,43 @@
   }
 }
 
+.pagina-robots {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+}
+
+.pagina-robots > .topo {
+  flex-shrink: 0;
+}
+
+.pagina-robots > main {
+  overflow: hidden;
+  display: flex;
+  flex: 1 1 0;
+  min-height: 0;
+  container-type: size;
+}
+
 .robot_list {
-  --card-size: min(70vh, 80vw);
+  --card-size: min(max(0px, calc(100cqh - 40px)), 80cqw);
 
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
   overflow-x: auto;
+  overflow-y: hidden;
 
+  scrollbar-width: thin;
+  scrollbar-color: var(--azul-claro) transparent;
+
+  flex: 1 1 auto;
+  min-height: 0;
   width: 100%;
-  height: calc(98vh - 120px);
-  padding: 60px calc((100vw - var(--card-size)) / 2);
+  height: auto;
+  padding: 20px calc((100cqw - var(--card-size)) / 2);
 
   gap: 3rem;
 
