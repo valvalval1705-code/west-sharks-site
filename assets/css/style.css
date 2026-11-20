@@ -18,13 +18,13 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #071525;
+  background-color: var(--azul-escuro);
   color: #ffffff;
   line-height: 1.6;
 }
 
 :root {
-  --azul-escuro: #071525;
+  --azul-escuro: #0d2541;
   --azul-medio: #102c49;
   --azul: #168bc4;
   --azul-claro: #39b8e8;
@@ -318,7 +318,7 @@ section p {
 
   & .icone svg {
     color: white;
-    filter: drop-shadow( 0 0 10px var(--azul));
+    filter: drop-shadow(0 0 10px var(--azul));
   }
 }
 

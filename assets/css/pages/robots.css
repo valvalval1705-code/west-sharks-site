@@ -12,7 +12,7 @@
     transform: scale(0.95);
   }
   50% {
-    border-width: 10px;
+    border-width: 6px;
     border-color: rgb(119, 151, 255);
     transform: scale(1);
   }
@@ -54,58 +54,71 @@
   overflow-y: hidden;
 
   scrollbar-width: thin;
-  scrollbar-color: var(--azul-claro) transparent;
+  scrollbar-color: rgb(220, 234, 255) transparent;
 
   flex: 1 1 auto;
   min-height: 0;
   width: 100%;
-  height: auto;
-  padding: 20px calc((100cqw - var(--card-size)) / 2);
+  height: 100%;
+  padding: 4% calc((100cqw - var(--card-size)) / 2);
 
   gap: 3rem;
 
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  align-items: center;
 
   & .robot_card {
     display: flex;
     flex-direction: column;
 
+    overflow: hidden;
+
     aspect-ratio: 1;
     flex-shrink: 0;
-    height: var(--card-size);
-    width: auto;
+    height: 100%;
+    /* height: var(--card-size); */
 
-    background-color: var(--azul-escuro);
+    background-color: var(--azul-medio);
 
     scroll-snap-align: center;
 
     view-timeline-name: --card-scroll;
     view-timeline-axis: inline;
 
+    box-sizing: border-box;
+    border: 3px solid rgb(119, 151, 255);
+    border-radius: 15px;
+
+    animation-name: highlight-center;
+    animation-timing-function: linear;
+    animation-fill-mode: both;
+    animation-timeline: view(inline);
+    animation-range: cover 0% cover 100%;
+
     & .content_holder {
       display: flex;
       flex-direction: column;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      scrollbar-width: thin;
 
       height: 100%;
       width: 100%;
 
       padding: 20px;
 
-      box-sizing: border-box;
-      border: 3px solid rgb(119, 151, 255);
-      border-radius: 15px;
-
-      animation: highlight-center linear both;
-      animation-timeline: view(inline);
-      animation-range: cover 0% cover 100%;
-
       & .model_holder {
         display: flex;
-        flex-grow: 2;
-        border-radius: 10px;
+        flex: none;
+        height: 50%;
+        min-height: 100px;
+        border-radius: 4px;
         overflow: hidden;
+        aspect-ratio: auto;
+        width: 100%;
 
+        box-shadow: 0 0 4px var(--azul);
         margin-bottom: 10px;
 
         & model-viewer {
@@ -161,5 +174,25 @@
   }
   100% {
     --transparency: 100%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .robot_list .robot_name {
+    font-size: 1.4rem;
+  }
+
+  .robot_list .robot_description {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .robot_list .robot_name {
+    font-size: 1.2rem;
+  }
+
+  .robot_list .robot_description {
+    font-size: 0.8rem;
   }
 }
